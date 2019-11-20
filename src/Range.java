@@ -27,6 +27,7 @@ public class Range implements Iterable<Integer>, Iterator<Integer> {
 
     /**
      * Fieldy fields. Self-explanatory. Position within range for iteration
+     * Iteration across the nation
      */
     int rangePos;
 

@@ -9,6 +9,7 @@ public class MethodTest {
             System.out.println(x.next());
         System.out.println(x.next());
         System.out.println("\n Values 0 to 9 \n");
+        System.out.println("foo");
 
 
 
