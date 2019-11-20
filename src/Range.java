@@ -26,16 +26,14 @@ public class Range implements Iterable<Integer>, Iterator<Integer> {
     int rangeStep = 1;
 
     /**
-     * Fieldy fields. Self-explanatory. Position within range for iteration
-     * Iteration across the nation
+     * Fieldy fields. Self-explanatory. Position within range for iteration Iteration across the
+     * nation
      */
     int rangePos;
 
     /**
      * Constructs a {@code Range} from {@code 0} (inclusive) to {@cod e stop} (exclusive).
-     *
      * <p>e.g. the following would print values from 0 to 9:
-     *
      * <pre>{@code
      * for (int val : new Range(10))
      *   System.out.println(val);
@@ -80,9 +78,7 @@ public class Range implements Iterable<Integer>, Iterator<Integer> {
     /**
      * Constructs a {@code Range} from {@code start} (inclusive) to {@code stop} (exclusive), moving
      * by {@code step} in each iteration.
-     *
      * <p>e.g. the following would print multiples of 100 between 0 and 1000:
-     *
      * <pre>{@code
      * for (int val : new Range(0, 1001, 100))
      *   System.out.println(val);
@@ -125,24 +121,14 @@ public class Range implements Iterable<Integer>, Iterator<Integer> {
     @Override
     public boolean hasNext() {
         boolean rStepNegative;
-        boolean rStepDividesEvenly;
-
         rStepNegative = rangeStep <= 0;
-
-        rStepDividesEvenly = (rangeEnd + rangeStart) % rangeStep == 0;
-
         if (!rStepNegative) {
-            if (rStepDividesEvenly) {
-                return rangePos - rangeStep < rangeEnd - rangeStep;
-            } else {
-                return (rangePos - rangeStep) < (rangeEnd - rangeStep);
-            }
+            return rangePos - rangeStep < rangeEnd - rangeStep;
         }
         // for negative step
         if (rStepNegative) {
-            if (rStepDividesEvenly) {
-                return rangePos + rangeStep > rangeEnd + rangeStep;
-            } else return (rangePos + rangeStep) > (rangeEnd + rangeStep);
+
+            return rangePos + rangeStep > rangeEnd + rangeStep;
         }
         return true;
     }
@@ -166,7 +152,6 @@ public class Range implements Iterable<Integer>, Iterator<Integer> {
             }
             if (retInt / rangeStep <= rangeEnd / rangeStep) {
                 if (retInt >= rangeEnd) throw new NoSuchElementException();
-
                 return retInt;
             } else {
                 throw new NoSuchElementException();
